@@ -21,4 +21,8 @@ module ApplicationHelper
         notice: "alert-info"
     }[name.to_sym] || name
   end
+
+  def main_id
+    @main_category.nil? ? 'home' : @main_category.id
+  end
 end
