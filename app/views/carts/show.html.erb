@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<div class="container form cart">
+  <% if @cart.line_items.any? %>
+    <%= render @cart %>
+  <% else %>
+    <h2 align="center" style="margin-top: 10px; margin-bottom: 10px">Корзина пуста</h2>
+  <% end %>
+</div>
