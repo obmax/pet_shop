@@ -1,31 +1,31 @@
-<div class="container">
-  <div class="row justify-content-center align-items-center" style="height:60vh">
+<div class="container form-style">
+  <div class="row justify-content-center align-items-center" style="height:auto">
     <div class="col-5">
-          <h2>Вход</h2>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-            </div>
+      <h2>Вход</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email , id: 'placeholder'%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :Пароль %><br />
-              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-            </div>
+        <div class="form-group">
+          <%= f.label :password , id: 'placeholder'%><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+        </div>
 
-            <% if devise_mapping.rememberable? -%>
-              <div class="form-group form-check">
-                <%= f.check_box :remember_me, type: "checkbox", class: "form-check-input" %>
-                <%= f.label :Запомнить_меня, class: "form-check-label" %>
-              </div>
-            <% end -%>
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group form-check">
+            <%= f.check_box :remember_me, type: "checkbox", class: "form-check-input" %>
+            <%= f.label :Запомнить_меня, class: "form-check-label" %>
+          </div>
+        <% end -%>
 
-            <div class="form-group">
-              <%= f.submit "Войти", class: 'btn btn-primary' %>
-            </div>
-          <% end %>
+        <div class="form-group">
+          <%= f.submit "Войти", class: 'btn btn-custom' %>
+        </div>
+      <% end %>
 
-          <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
