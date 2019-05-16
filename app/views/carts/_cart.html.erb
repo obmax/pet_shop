@@ -9,7 +9,7 @@
   </table>
   <span>
     <div style="column-width: 10em; margin-left: 380px;margin-bottom: 1em;">
-      <%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-change'%>
+      <%= link_to "Оформить заказ", new_order_path, class: 'btn btn-change'%>
       <%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-delete'%>
     </div>
   </span>
