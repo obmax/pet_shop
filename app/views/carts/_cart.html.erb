@@ -1,16 +1,27 @@
-<div class="carts form cart">
+<link href="#" rel="stylesheet">
+<div class="container">
   <h2 align="center">Корзина</h2>
-  <table style="margin-left: 2em;width: 1300px;margin-bottom: 1em;">
-    <%= render (@cart.line_items) %>
-    <tr class="total_line">
-      <td colspan="2">Total</td>
-      <td class="total_cell"><%= number_to_currency(@cart.total_price, format: "%n BYN") %></td>
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+    <tr>
+      <th style="width:50%">Продукт</th>
+      <th style="width:10%">Цена</th>
+      <th style="width:8%">Количество</th>
+      <th style="width:22%" class="text-center">Итого</th>
+      <th style="width:10%"></th>
     </tr>
+    </thead>
+    <tbody>
+    <%= render @cart.line_items %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td><a href="#" class="btn btn-custom"><i class="fa fa-angle-left"></i> Продолжить покупки</a></td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center"><strong><%= number_to_currency(@cart.total_price, format: "%n BYN") %></strong></td>
+<!--      <td><%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-success btn-block'%><i class="fa fa-angle-right"></i></td>-->
+      <td><%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-custom'%></td>
+    </tr>
+    </tfoot>
   </table>
-  <span>
-    <div style="column-width: 10em; margin-left: 380px;margin-bottom: 1em;">
-      <%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-change'%>
-      <%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-delete'%>
-    </div>
-  </span>
 </div>
