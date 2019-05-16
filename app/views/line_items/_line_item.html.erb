@@ -9,11 +9,13 @@
   </td>
   <td data-th="Price"><%= number_to_currency(line_item.product.price, format: "%n BYN") %></td>
   <td data-th="Quantity">
-    <input type="number" class="form-control text-center" value="1">
+    <p class="text-center"><%= line_item.quantity %></p>
+<!--    <input type="number" class="form-control text-center" value="<%#= line_item.quantity %>">-->
   </td>
   <td data-th="Subtotal" class="text-center"><%= number_to_currency(line_item.total_price, format: "%n BYN") %></td>
   <td class="actions" data-th="">
-    <button class="btn btn-custom btn-sm"><i class="fa fa-refresh">Обновить</i></button>
-    <button class="btn btn-custom btn-sm"><i class="fa fa-trash-o"><%= link_to 'Удалить', line_item, method: :delete, remote: true, id:'placeholder' %></i></button>
+    <%= button_to 'Удалить', line_item, method: :delete, remote: true, id:'placeholder', class: 'btn btn-custom btn-sm' %>
+<!--    <button class="btn btn-custom btn-sm"><i class="fa fa-refresh">Обновить</i></button>-->
+<!--    <button class="btn btn-custom btn-sm"><i class="fa fa-trash-o"><%#= link_to 'Удалить', line_item, method: :delete, remote: true, id:'placeholder' %></i></button>-->
   </td>
 </tr>
