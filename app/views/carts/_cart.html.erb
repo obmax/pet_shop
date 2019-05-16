@@ -19,7 +19,7 @@
       <td><a href="#" class="btn btn-custom"><i class="fa fa-angle-left"></i> Продолжить покупки</a></td>
       <td colspan="2" class="hidden-xs"></td>
       <td class="hidden-xs text-center"><strong><%= number_to_currency(@cart.total_price, format: "%n BYN") %></strong></td>
-      <!--      <td><%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-success btn-block'%><i class="fa fa-angle-right"></i></td>-->
+<!--      <td><%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-success btn-block'%><i class="fa fa-angle-right"></i></td>-->
       <td><%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-custom'%></td>
     </tr>
     </tfoot>

@@ -100,14 +100,22 @@ body{
       border-color: #EFEFEF;
     }
   }
-  div.list-group.category-list{
+  div.list-group.category-list {
     padding: 1em 0em 0em 0em;
-    a.list-group-item{
+
+    a.list-group-item {
       padding: 0.5em 0.5em 0.5em 1em;
     }
   }
+  .item {
+    img {
+      object-fit: cover;
+      height: 400px !important;
+      width: 700px !important;
+      margin: auto;
+    }
+  }
 }
-
 .form-style {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -122,18 +130,8 @@ body{
     }
   }
   #placeholder {
-    color: #586871;
+    color: #586871 !important;
     font-style: italic;
-  }
-  .btn-custom {
-    color: #435058;
-    border-color: #435058;
-    &:hover {
-      background-color: #56a0ef;
-      border-color: #56a0ef !important;
-      color: #f1f2ee;
-      border-radius: 7px;
-    }
   }
   a {
     color: #435058;
@@ -154,7 +152,47 @@ body{
     color: #435058;
   }
 }
+.btn-custom {
+  color: #435058;
+  border-color: #435058;
+  &:hover {
+    background-color: #DCF763;
+    border-color: #DCF763 !important;
+    color: #435058;
+    border-radius: 7px;
+  }
+}
+.table>tbody>tr>td, .table>tfoot>tr>td{
+  vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+  table#cart tbody td .form-control{
+    width:20%;
+    display: inline !important;
+  }
+  .actions .btn{
+    width:36%;
+    margin:1.5em 0;
+  }
 
+  .actions .btn-info{
+    float:left;
+  }
+  .actions .btn-danger{
+    float:right;
+  }
+
+  table#cart thead { display: none; }
+  table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+  table#cart tbody tr td:first-child { background: #333; color: #fff; }
+  table#cart tbody td:before {
+    content: attr(data-th); font-weight: bold;
+    display: inline-block; width: 8rem;
+  }
+  table#cart tfoot td{display:block; }
+  table#cart tfoot td .btn{display:block;}
+
+}
 
 /*footer*/
 .col_white_amrc { color:#FFF;}
