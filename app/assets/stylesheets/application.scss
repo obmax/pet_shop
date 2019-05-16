@@ -68,15 +68,16 @@ body{
     }
   }
   .content-margins {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   .fonts {
     h2 {
       font-family: "Comic Sans MS", sans-serif;
       color: #435058;
+      margin-top: 10px;
     }
   }
   footer.page-footer{
@@ -116,6 +117,12 @@ body{
     }
   }
 }
+.container-category {
+    width: 200px;
+    margin-left: 0px;
+    margin-right: 0px ;
+}
+
 .form-style {
   margin-top: 30px;
   margin-bottom: 30px;

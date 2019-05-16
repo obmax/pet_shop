@@ -1,13 +1,19 @@
-<div >
-  <div class="content-margins">
-    <div class="container fonts">
-      <h2 align="center"><%= @main_category.name %></h2>
-    </div>
-    <div class="col-sm-3 list-group category-list">
-      <% @main_category.categories.each do |category| %>
+<div class="fonts">
+  <h2 align="center"><%= @main_category.name %></h2>
+</div>
+<div class="row">
+  <div class="col-sm-3 content-margins container-category">
+    <div class="list-group category-list">
+      <% @main_category.categories.each do |category|%>
         <%= link_to category.name, category_path(category.id), class: 'list-group-item list-group-item-action' %>
       <% end %>
     </div>
   </div>
-  <%= render @products %>
+
+  <div class="col-sm-9" style="margin-top: 16px; margin-bottom: 30px">
+    <td>
+        <%= render @products %>
+    </td>
+  </div>
+
 </div>
