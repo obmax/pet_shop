@@ -1,5 +1,5 @@
 <link href="#" rel="stylesheet">
-<div class="container">
+<div class="container carts">
   <h2 align="center">Корзина</h2>
   <table id="cart" class="table table-hover table-condensed">
     <thead>
@@ -17,10 +17,9 @@
     <tfoot>
     <tr>
       <td><a href="#" class="btn btn-custom"><i class="fa fa-angle-left"></i> Продолжить покупки</a></td>
-      <td colspan="2" class="hidden-xs"></td>
+      <td colspan="2" class="hidden-xs"><%= link_to "Оформить заказ", new_order_path, class: 'btn btn-success btn-block'%></td>
       <td class="hidden-xs text-center"><strong><%= number_to_currency(@cart.total_price, format: "%n BYN") %></strong></td>
-<!--      <td><%#= link_to "Оформить заказ", new_order_path, class: 'btn btn-success btn-block'%><i class="fa fa-angle-right"></i></td>-->
-      <td><%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-custom'%></td>
+      <td><%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'btn btn-danger'%></td>
     </tr>
     </tfoot>
   </table>
